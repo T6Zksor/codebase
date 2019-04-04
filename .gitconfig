@@ -1,0 +1,19 @@
+[merge]
+	tool = kdiff3
+[diff]
+	guitool = kdiff3
+[core]
+	editor = \"D:/portable/GitExtensions/GitExtensions.exe\" fileeditor
+	autocrlf = true
+[user]
+	name = t6zksor
+	email = t6zksor@gmail.com
+[mergetool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+[difftool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	lg = log --all --decorate --oneline --graph
