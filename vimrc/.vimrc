@@ -128,20 +128,21 @@ call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'vim-scripts/AutoComplPop'
 Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/a.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'mileszs/ack.vim'
 Plug 'Yggdroot/LeaderF'
-Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
 Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
+
+"Plug 'tpope/vim-fugitive'
+"Plug 'vim-scripts/AutoComplPop'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'tpope/vim-surround'
+"Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -151,10 +152,6 @@ call plug#end()
 noremap <F2> :LeaderfFunction<cr>
 " }
 
-" fugitive {
-noremap <F3> :Gstatus<cr>
-" }
-
 " vim-indent-guides {
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 1
@@ -162,13 +159,7 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_tab_guides = 0
 " }
 
-" EasyMotion {
-map <Leader> <Plug>(easymotion-prefix)
-" }
-
 " colorscheme {
-"let g:solarized_termcolors=256
-"colorscheme solarized
 colorscheme molokai
 " }
 
@@ -188,14 +179,4 @@ let g:clang_format#detect_style_file = 1
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
-" }
-
-" ShortCut for compile and run {
-nnoremap <F7> :call TryCompile()<CR>
-function! TryCompile()
-    exec "w"
-    if &filetype ==? 'haskell'
-        exec "!ghc --make %"
-    endif
-endfunction
 " }
