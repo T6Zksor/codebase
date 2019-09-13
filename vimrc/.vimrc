@@ -136,6 +136,9 @@ Plug 'Yggdroot/LeaderF'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rhysd/vim-clang-format'
 
+"Plug 'prabirshrestha/async.vim'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'ajh17/vimcompletesme'
 "Plug 'tpope/vim-fugitive'
 "Plug 'vim-scripts/AutoComplPop'
 "Plug 'SirVer/ultisnips'
@@ -179,4 +182,21 @@ let g:clang_format#detect_style_file = 1
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" }
+
+" vim-lsp for clangd {
+"if has('win32')
+    "let s:my_clangd_path='C:\Program Files\LLVM\bin\clangd.exe'
+    "if executable(s:my_clangd_path)
+        "au User lsp_setup call lsp#register_server({
+                    "\ 'name': 'clangd',
+                    "\ 'cmd': {server_info->[''.s:my_clangd_path, '-background-index']},
+                    "\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                    "\ })
+        "autocmd FileType c setlocal omnifunc=lsp#complete
+        "autocmd FileType cpp setlocal omnifunc=lsp#complete
+        "autocmd FileType objc setlocal omnifunc=lsp#complete
+        "autocmd FileType objcpp setlocal omnifunc=lsp#complete
+    "endif
+"endif
 " }
