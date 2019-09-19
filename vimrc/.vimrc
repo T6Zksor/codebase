@@ -125,7 +125,6 @@ nmap <Leader>p "+p
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdcommenter'
@@ -136,6 +135,7 @@ Plug 'Yggdroot/LeaderF'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/AutoComplPop'
+Plug 'danilo-augusto/vim-afterglow'
 
 "Plug 'prabirshrestha/async.vim'
 "Plug 'prabirshrestha/vim-lsp'
@@ -146,6 +146,7 @@ Plug 'vim-scripts/AutoComplPop'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'tpope/vim-surround'
 "Plug 'easymotion/vim-easymotion'
+"Plug 'tomasr/molokai'
 
 call plug#end()
 
@@ -163,7 +164,7 @@ let g:indent_guides_tab_guides = 0
 " }
 
 " colorscheme {
-colorscheme molokai
+colorscheme afterglow
 " }
 
 " Ack settings {
