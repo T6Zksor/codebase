@@ -135,7 +135,7 @@ Plug 'Yggdroot/LeaderF'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/AutoComplPop'
-Plug 'danilo-augusto/vim-afterglow'
+Plug 'nanotech/jellybeans.vim'
 
 "Plug 'prabirshrestha/async.vim'
 "Plug 'prabirshrestha/vim-lsp'
@@ -147,6 +147,7 @@ Plug 'danilo-augusto/vim-afterglow'
 "Plug 'tpope/vim-surround'
 "Plug 'easymotion/vim-easymotion'
 "Plug 'tomasr/molokai'
+"Plug 'danilo-augusto/vim-afterglow'
 
 call plug#end()
 
@@ -164,7 +165,8 @@ let g:indent_guides_tab_guides = 0
 " }
 
 " colorscheme {
-colorscheme afterglow
+let g:jellybeans_use_gui_italics=0
+colorscheme jellybeans
 " }
 
 " Ack settings {
