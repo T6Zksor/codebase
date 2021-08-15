@@ -1,0 +1,24 @@
+"GVim Settings {{{
+set incsearch
+set ignorecase smartcase
+set hlsearch
+"}}}
+"Key Mapping {{{
+let mapleader=","
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+" 设置快捷键将系统剪贴板内容粘贴至 vim
+nmap <Leader>p "+p
+
+" vsc means visual studio command
+nmap <C-O> :vsc View.NavigateBackward<CR>
+nmap <C-I> :vsc View.NavigateForward<CR>
+
+" Comment and Uncomment
+vnoremap <Leader>cc	:vsc Edit.CommentSelection<CR>
+vnoremap <Leader>cu	:vsc Edit.UncommentSelection<CR>
+nnoremap <Leader>cc	:vsc Edit.CommentSelection<CR>
+nnoremap <Leader>cu	:vsc Edit.UncommentSelection<CR>
+
+vnoremap <Leader>am	:vsc VAssistX.VaSnippetInsert<CR>
+"}}}
