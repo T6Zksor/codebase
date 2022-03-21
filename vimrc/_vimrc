@@ -23,7 +23,7 @@ set hidden                          " Allow buffer switching without saving
 
 set backspace=indent,eol,start  " Backspace for dummies
 set linespace=0                 " No extra spaces between rows
-set number                      " Line numbers on
+set number relativenumber       " Line numbers on
 set showmatch                   " Show matching brackets/parenthesis
 set incsearch                   " Find as you type search
 set hlsearch                    " Highlight search terms
@@ -38,6 +38,7 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable                  " Auto fold code
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set laststatus=2                " Always have a status line
 
 " }
 
@@ -45,7 +46,8 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic white
 "
 if has("gui_running")
     if has('win32')
-        autocmd GUIEnter * simalt ~x
+        "autocmd GUIEnter * simalt ~x
+        set lines=40 columns=150
     else
         " GUI is running or is about to start.
         " Maximize gvim window (for an alternative on Windows, see simalt below).
@@ -73,7 +75,8 @@ if has('gui_running')
         set guifont=Monaco\ 12
     endif
     if has('win32')
-        set guifont=Consolas:h13
+        set guifont=Consolas:h12
+        set guifontwide=黑体
     endif
 endif
 "
@@ -125,18 +128,23 @@ nmap <Leader>p "+p
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
+"Plug 'vim-airline/vim-airline'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/a.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'mileszs/ack.vim'
-Plug 'Yggdroot/LeaderF'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'nanotech/jellybeans.vim'
+Plug 'preservim/nerdtree'
+Plug 'vim-scripts/gtags.vim'
 
+"Plug 'Yggdroot/LeaderF'
+"Plug 'kien/ctrlp.vim'
+"Plug 'fisadev/vim-ctrlp-cmdpalette'
 "Plug 'prabirshrestha/async.vim'
 "Plug 'prabirshrestha/vim-lsp'
 "Plug 'ajh17/vimcompletesme'
@@ -154,7 +162,8 @@ call plug#end()
 " }
 
 " Leaderf {
-noremap <F2> :LeaderfFunction<cr>
+"noremap <F2> :LeaderfFunction<cr>
+"nmap <C-p> :LeaderfCommand<cr>
 " }
 
 " vim-indent-guides {
@@ -187,19 +196,11 @@ autocmd FileType c,cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " }
 
-" vim-lsp for clangd {
-"if has('win32')
-    "let s:my_clangd_path='C:\Program Files\LLVM\bin\clangd.exe'
-    "if executable(s:my_clangd_path)
-        "au User lsp_setup call lsp#register_server({
-                    "\ 'name': 'clangd',
-                    "\ 'cmd': {server_info->[''.s:my_clangd_path, '-background-index']},
-                    "\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-                    "\ })
-        "autocmd FileType c setlocal omnifunc=lsp#complete
-        "autocmd FileType cpp setlocal omnifunc=lsp#complete
-        "autocmd FileType objc setlocal omnifunc=lsp#complete
-        "autocmd FileType objcpp setlocal omnifunc=lsp#complete
-    "endif
-"endif
+" markdown wrap lines {
+
+augroup WrapLineInMarkDownFile
+    autocmd!
+    autocmd FileType markdown setlocal wrap
+augroup END
+
 " }
