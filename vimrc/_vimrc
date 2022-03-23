@@ -129,7 +129,6 @@ nmap <Leader>p "+p
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-"Plug 'vim-airline/vim-airline'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/a.vim'
@@ -139,9 +138,12 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'nanotech/jellybeans.vim'
-Plug 'preservim/nerdtree'
-Plug 'vim-scripts/gtags.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
 
+"Plug 'preservim/nerdtree'
+"Plug 'vim-scripts/gtags.vim'
+"Plug 'vim-airline/vim-airline'
 "Plug 'Yggdroot/LeaderF'
 "Plug 'kien/ctrlp.vim'
 "Plug 'fisadev/vim-ctrlp-cmdpalette'
@@ -192,15 +194,31 @@ endif
 let g:clang_format#detect_style_file = 1
 
 " map to <Leader>cf in C++ code
-autocmd FileType c,cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
+augroup CxxFilesKeymap
+    autocmd!
+    autocmd FileType c,cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+    autocmd FileType c,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
+augroup END
 " }
 
 " markdown wrap lines {
-
 augroup WrapLineInMarkDownFile
     autocmd!
     autocmd FileType markdown setlocal wrap
 augroup END
+" }
 
+" gutentags {
+" enable gtags module
+let g:gutentags_modules = ['gtags_cscope']
+
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+let g:gutentags_plus_nomap = 1
+noremap <silent> <leader>gs :GscopeFind s <C-R><C-W><cr>
+noremap <silent> <leader>gg :GscopeFind g <C-R><C-W><cr>
+noremap <silent> <leader>gc :GscopeFind c <C-R><C-W><cr>
+noremap <silent> <leader>gt :GscopeFind t <C-R><C-W><cr>
+noremap <silent> <leader>gf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
 " }
