@@ -3,6 +3,9 @@ set incsearch
 set ignorecase smartcase
 set hlsearch
 "}}}
+
+" hide all marks
+set vsvim_hidemarks=<>[]^.'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 "Key Mapping {{{
 let mapleader=","
 " 设置快捷键将选中文本块复制至系统剪贴板
