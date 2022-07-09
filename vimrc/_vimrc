@@ -128,7 +128,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'nanotech/jellybeans.vim'
-Plug 'ludovicchabant/vim-gutentags', {'commit': '39dc3ee'}
+Plug 'ludovicchabant/vim-gutentags', {'commit': '50705e8e'}
 Plug 'skywind3000/gutentags_plus'
 Plug 'Yggdroot/LeaderF'
 
