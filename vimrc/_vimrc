@@ -97,23 +97,13 @@ set splitbelow                  " Puts new split windows to the bottom of the cu
 " }
 
 " Backup {
-if has('win32')
-    set backupdir=$VIM/_backup
-    set backup
+set backupdir=~/.vim/.backup
+set backup
 
-    set undodir=$VIM/_undo
-    set undofile
+set undodir=~/.vim/.undo
+set undofile
 
-    set directory=$VIM/_swp
-else
-    set backupdir=~/.vim/.backup
-    set backup
-
-    set undodir=~/.vim/.undo
-    set undofile
-
-    set directory=~/.vim/.swp
-endif
+set directory=~/.vim/.swp
 "}
 
 " Clipboard {
@@ -138,7 +128,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'nanotech/jellybeans.vim'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags', {'commit': '39dc3ee'}
 Plug 'skywind3000/gutentags_plus'
 Plug 'Yggdroot/LeaderF'
 
