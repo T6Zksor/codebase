@@ -131,6 +131,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'ludovicchabant/vim-gutentags', {'commit': '50705e8e'}
 Plug 'skywind3000/gutentags_plus'
 Plug 'Yggdroot/LeaderF'
+Plug 'preservim/tagbar'
 
 "Plug 'preservim/nerdtree'
 "Plug 'vim-scripts/gtags.vim'
@@ -219,4 +220,8 @@ noremap <silent> <leader>gg :GscopeFind g <C-R><C-W><cr>
 noremap <silent> <leader>gc :GscopeFind c <C-R><C-W><cr>
 noremap <silent> <leader>gt :GscopeFind t <C-R><C-W><cr>
 noremap <silent> <leader>gf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
+" }
+
+" tagbar {
+nmap <F8> :TagbarToggle<CR>
 " }
