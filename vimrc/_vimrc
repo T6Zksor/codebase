@@ -36,6 +36,8 @@ set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable                  " Auto fold code
+set foldmethod=indent
+set foldlevel=5
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 set laststatus=2                " Always have a status line
@@ -128,10 +130,12 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'nanotech/jellybeans.vim'
-Plug 'ludovicchabant/vim-gutentags', {'commit': '50705e8e'}
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
 Plug 'Yggdroot/LeaderF'
 Plug 'preservim/tagbar'
+Plug 'peterhoeg/vim-qml'
+Plug 'kalvinpearce/ShaderHighlight'
 
 "Plug 'preservim/nerdtree'
 "Plug 'vim-scripts/gtags.vim'
